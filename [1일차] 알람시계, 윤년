@@ -37,26 +37,34 @@
 
 코드
 
+package codeExam;
 
 import java.util.Scanner;
-public class Main{
-    public static void main(String[] args){
-    	Scanner s = new Scanner(System.in);
-    	String a = s.nextLine();
-    	String b[] = a.split(" ");
-    	int c = Integer.parseInt(b[0]);
-    	int d = Integer.parseInt(b[1]);
-    	if((d-45) >= 0) {
-    		System.out.println(c+" "+(d-45));
-    	}else if((d-45)<0) {
-    		int t = c-1;
-    		if(t==-1) {
-    			t=23;
-    		}
-    		int m = (60-45)+d;
-    		System.out.println(t +" "+ m);
-    	}	
-    }
+
+public class exercise2 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String a = sc.nextLine();
+		String[] b = a.split(" ");
+		
+		int c = Integer.parseInt(b[0]);
+		int d = Integer.parseInt(b[1]);
+		
+		if ((d-45)>=0) {
+			System.out.println(c+" "+(d-45));
+		}else if((d-45)<0) {
+			int t = c-1;
+			if(t==-1) {
+				t = 23;
+				
+			}
+			int m = (60-45)+d;
+			System.out.println(t+" "+m);
+		}
+	}
     
     
 
