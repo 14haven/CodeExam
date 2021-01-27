@@ -1,0 +1,158 @@
+1. 문제
+9개의 서로 다른 자연수가 주어질 때, 이들 중 최댓값을 찾고 그 최댓값이 몇 번째 수인지를 구하는 프로그램을 작성하시오.
+예를 들어, 서로 다른 9개의 자연수
+3, 29, 38, 12, 57, 74, 40, 85, 61
+이 주어지면, 이들 중 최댓값은 85이고, 이 값은 8번째 수이다.
+
+
+입력
+첫째 줄부터 아홉 번째 줄까지 한 줄에 하나의 자연수가 주어진다. 주어지는 자연수는 100 보다 작다.
+
+
+출력
+첫째 줄에 최댓값을 출력하고, 둘째 줄에 최댓값이 몇 번째 수인지를 출력한다.
+
+
+예제 입력)
+3 29 38 12 57 74 40 85 61
+
+예제 출력)
+85 8
+
+
+코드
+
+
+import java.util.Scanner;
+
+public class Main {
+
+public static void main(String[] args) {
+
+Scanner sc=new Scanner(System.in);
+
+int arr[]= new int[9];
+
+int max=arr[0];
+
+int index=0;
+
+for(int i=0;i<9;i++) {
+
+arr[i]=sc.nextInt();
+
+sc.nextLine();
+
+}
+
+for(int i=1;i<9;i++) {
+
+if(arr[i]>max) {
+
+max=arr[i];
+
+index=i+1;
+
+}
+
+}
+
+System.out.println(max);
+
+System.out.print(index);
+
+sc.close();
+
+}
+
+}
+내용을 입력하세요.
+
+
+2. 문제
+세 개의 자연수 A, B, C가 주어질 때 A × B × C를 계산한 결과에 0부터 9까지 각각의 숫자가 몇 번씩 쓰였는지를 구하는 프로그램을 작성하시오.
+예를 들어 A = 150, B = 266, C = 427 이라면 A × B × C = 150 × 266 × 427 = 17037300 이 되고, 계산한 결과 17037300 에는 0이 3번, 1이 1번, 3이 2번, 7이 2번 쓰였다.
+
+
+입력
+첫째 줄에 A, 둘째 줄에 B, 셋째 줄에 C가 주어진다. A, B, C는 모두 100보다 같거나 크고, 1,000보다 작은 자연수이다.
+
+
+출력
+첫째 줄에는 A × B × C의 결과에 0 이 몇 번 쓰였는지 출력한다. 
+마찬가지로 둘째 줄부터 열 번째 줄까지 A × B × C의 결과에 1부터 9까지의 숫자가 각각 몇 번 쓰였는지 차례로 한 줄에 하나씩 출력한다.
+
+
+예제 입력)
+150
+
+266
+
+427
+
+예제 출력)
+3 
+1 
+0 
+2 
+0 
+0
+0 
+2 
+0
+0
+
+셀 병합
+행 분할
+열 분할
+너비 맞춤
+삭제
+
+코드
+
+
+
+package codeExam;
+
+import java.util.Scanner;
+
+public class exercise5 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		
+		int result = a * b * c ; 
+		
+		int[]array = new int[10];
+	    int N;
+	    
+	   
+	    while (true)
+	    {
+	    	if(result==0) {
+	    		break;
+	    	}
+	    	
+	    	N = result % 10;
+	    	for(int i = 0 ; i < 10 ; i++)
+	    	{
+	    		if (N == i)
+	    		{
+	    			array[i] = array[i] + 1;
+	    		}
+	    	}
+	    	result = result / 10;
+	    }
+	    for(int j = 0 ; j < 10 ; j++)
+	    {
+	    	System.out.println(array[j]);
+	    }
+	}
+
+}
+내용을 입력하세요.
